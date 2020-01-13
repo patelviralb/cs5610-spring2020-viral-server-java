@@ -6,12 +6,13 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./login.style.client.css">
 </head>
 <body class="h-100">
 <div class="container h-100">
   <div class="row h-100 align-items-center">
     <div class="col-xs-12 col-lg-4 border mx-auto">
-      <h1>Sign in</h1>
+      <h1 class="cs5610-h1-sign-in">Sign in</h1>
 
       <div class="alert alert-primary alert-danger" role="alert">
         Alerts goes here
@@ -46,18 +47,28 @@
         <div class="row form-group">
           <div class="col">
             <button class="btn btn-primary btn-block">Sign in</button>
-            <button class="btn btn-danger btn-block">Cancel</button>
-            <div class="row">
+            <!--<a href="#" class="btn btn-danger btn-block">Cancel</a>
+            <div class="row  col-form-label">
               <div class="col-6">
                 <a href="#">Forgot Password</a>
               </div>
               <div class="col-6 float-right">
                 <a href="#" class="float-right">Sign up</a>
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </form>
+
+      <a href="#" class="btn btn-danger btn-block">Cancel</a>
+      <div class="row col-form-label">
+        <div class="col-6">
+          <a href="#">Forgot Password</a>
+        </div>
+        <div class="col-6 float-right">
+          <a href="../signup/signup.template.client.html" class="float-right">Sign up</a>
+        </div>
+      </div>
 
     </div>
   </div>
