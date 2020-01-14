@@ -9,68 +9,68 @@
   <link rel="stylesheet" href="./register.style.client.css">
 </head>
 <body class="h-100">
-<div class="container h-100">
-  <div class="row h-100 align-items-center">
-    <div class="col-xs-12 col-lg-4 border mx-auto">
-      <h1 class="cs5610-h1-register">Register</h1>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-xs-12 col-lg-4 border mx-auto">
+        <h1 class="cs5610-h1-register">Register</h1>
 
-      <div class="alert alert-primary alert-danger" role="alert">
-        Alerts goes here
-      </div>
-
-      <form>
-        <div class="row form-group">
-          <div class="col-12">
-            <label for="username"
-                   class="col-form-label">Username</label>
-          </div>
-          <div class="col-12">
-            <input type="text"
-                   class="form-control"
-                   id="username"
-                   placeholder="Doe"/>
-          </div>
+        <div class="alert alert-primary alert-danger" role="alert">
+          Alerts goes here
         </div>
 
-        <div class="row form-group">
-          <div class="col-12">
-            <label for="password"
-                   class="col-form-label">Password</label>
+        <form>
+          <div class="row form-group">
+            <div class="col-12">
+              <label for="username"
+                     class="col-form-label">Username</label>
+            </div>
+            <div class="col-12">
+              <input type="text"
+                     class="form-control"
+                     id="username"
+                     placeholder="username - E.g. johndoe, janedoe" autocomplete="off" required/>
+            </div>
           </div>
-          <div class="col-12">
-            <input type="password"
-                   class="form-control"
-                   id="password"/>
-          </div>
-        </div>
 
-        <div class="row form-group">
-          <div class="col-12">
-            <label for="confirm-password"
-                   class="col-form-label">Confirm Password</label>
+          <div class="row form-group">
+            <div class="col-12">
+              <label for="password"
+                     class="col-form-label">Password</label>
+            </div>
+            <div class="col-12">
+              <input type="password"
+                     class="form-control"
+                     id="password" autocomplete="off" required/>
+            </div>
           </div>
-          <div class="col-12">
-            <input type="password"
-                   class="form-control"
-                   id="confirm-password"/>
-          </div>
-        </div>
 
-        <div class="row form-group">
-          <div class="col">
-            <button class="btn btn-primary btn-block">Sign up</button>
+          <div class="row form-group">
+            <div class="col-12">
+              <label for="confirm-password"
+                     class="col-form-label">Confirm Password</label>
+            </div>
+            <div class="col-12">
+              <input type="password"
+                     class="form-control"
+                     id="confirm-password" autocomplete="off" required/>
+            </div>
           </div>
-        </div>
-      </form>
 
-      <a href="#" class="btn btn-dark btn-block">Go Back</a>
-      <div class="row  col-form-label">
-        <div class="col-6">
-          <a href="../login/login.template.client.html" class="">Login</a>
+          <div class="row form-group">
+            <div class="col">
+              <button class="btn btn-primary btn-block">Sign up</button>
+            </div>
+          </div>
+        </form>
+
+        <a href="#" class="btn btn-dark btn-block">Go Back</a>
+        <div class="row mt-sm-3">
+          <div class="col-6">
+            <a href="../login/login.template.client.html">Login</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </body>
 </html>
