@@ -9,117 +9,117 @@
   <link rel="stylesheet" href="./profile.style.client.css">
 </head>
 <body class="h-100">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-xs-12 col-md-8 mx-auto">
-        <h1 class="cs5610-h1-profile">Profile</h1>
+<div class="container h-100">
+  <div class="row h-100 align-items-center">
+    <div class="col-xs-12 col-md-8 mx-auto">
+      <h1 class="cs5610-h1-profile">Profile</h1>
 
-        <div class="alert alert-danger wbdv-message" role="alert">
-          Alerts goes here
-        </div>
-
-        <div class="alert alert-success" role="status">
-          Status goes here
-        </div>
-
-        <form>
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="username"
-                     class="col-form-label">Username</label>
-            </div>
-            <div class="col-12">
-              <input type="text"
-                     class="form-control wbdv-field wbdv-username"
-                     id="username"
-                     placeholder="username - E.g. johndoe, janedoe" value="johndoe" disabled/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="password"
-                     class="col-form-label">Password</label>
-            </div>
-            <div class="col-12">
-              <input type="password"
-                     class="form-control wbdv-field wbdv-password"
-                     id="password" autocomplete="off" required/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="confirm-password"
-                     class="col-form-label">Confirm Password</label>
-            </div>
-            <div class="col-12">
-              <input type="password"
-                     class="form-control wbdv-field wbdv-password-verify"
-                     id="confirm-password" autocomplete="off" required/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="phone"
-                     class="col-form-label wbdv-field wbdv-phone">Phone</label>
-            </div>
-            <div class="col-12">
-              <input type="number"
-                     class="form-control"
-                     id="phone" autocomplete="off" required/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="email"
-                     class="col-form-label">Email</label>
-            </div>
-            <div class="col-12">
-              <input type="email"
-                     class="form-control wbdv-field wbdv-email"
-                     id="email" autocomplete="off" required/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="birth-date"
-                     class="col-form-label">Date of Birth</label>
-            </div>
-            <div class="col-12">
-              <input type="date"
-                     class="form-control wbdv-field wbdv-dob"
-                     id="birth-date" value="0001-01-01" autocomplete="off" required/>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col-12">
-              <label for="user-role"
-                     class="col-form-label">Role</label>
-            </div>
-            <div class="col-12">
-              <select class="form-control wbdv-field wbdv-role" name="user-role" id="user-role">
-                <option value="Faculty">Faculty</option>
-                <option value="Student">Student</option>
-                <option value="Admin">Admin</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="row form-group">
-            <div class="col">
-              <button class="btn btn-success btn-block wbdv-button wbdv-update">Update</button>
-            </div>
-          </div>
-        </form>
-
-        <a href="#" class="btn btn-danger btn-block form-group wbdv-button wbdv-logout">Logout</a>
+      <div class="alert alert-danger wbdv-message" role="alert">
+        Alerts goes here
       </div>
+
+      <div class="alert alert-success" role="status">
+        Status goes here
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="username"
+                 class="col-form-label">Username</label>
+        </div>
+        <div class="col-12">
+          <input type="text"
+                 class="form-control wbdv-field wbdv-username"
+                 id="username"
+                 placeholder="username - E.g. johndoe, janedoe" value="johndoe" disabled/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="password"
+                 class="col-form-label">Password</label>
+        </div>
+        <div class="col-12">
+          <input type="password"
+                 class="form-control wbdv-field wbdv-password"
+                 id="password" autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="confirm-password"
+                 class="col-form-label">Confirm Password</label>
+        </div>
+        <div class="col-12">
+          <input type="password"
+                 class="form-control"
+                 id="confirm-password" autocomplete="off"/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="phone"
+                 class="col-form-label">Phone</label>
+        </div>
+        <div class="col-12">
+          <input type="number"
+                 class="form-control wbdv-field wbdv-phone"
+                 id="phone" autocomplete="off" value="1234567890" required/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="email"
+                 class="col-form-label">Email</label>
+        </div>
+        <div class="col-12">
+          <input type="email"
+                 class="form-control wbdv-field wbdv-email"
+                 id="email" autocomplete="off" value="john.doe@qwerty.com" required/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="birth-date"
+                 class="col-form-label">Date of Birth</label>
+        </div>
+        <div class="col-12">
+          <input type="date"
+                 class="form-control wbdv-field wbdv-dob"
+                 id="birth-date" value="0001-01-01" autocomplete="off" required/>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-12">
+          <label for="user-role"
+                 class="col-form-label">Role</label>
+        </div>
+        <div class="col-12">
+          <select class="form-control wbdv-field wbdv-role" name="user-role" id="user-role">
+            <option value="Faculty">Faculty</option>
+            <option value="Student">Student</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col">
+          <!--<button class="btn btn-success btn-block wbdv-button wbdv-update">Update</button>-->
+          <a href="./profile.template.client.html"
+             class="btn btn-success btn-block wbdv-button wbdv-update">Update</a>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-danger btn-block form-group wbdv-button wbdv-logout">Logout</a>
     </div>
   </div>
+</div>
 </body>
 </html>
