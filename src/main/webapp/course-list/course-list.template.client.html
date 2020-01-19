@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+  <link href="./course-list.style.client.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="h-100">
+<div class="h-100">
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="d-flex flex-row my-0 justify-content-start">
+      <button class="btn btn-lg btn-dark" type="button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <span class="p-2 d-none d-lg-block cs5610-course-list-span my-0">Course List</span>
+    </div>
+    <div class="form-inline my-2 my-lg-0 justify-content-end w-75">
+      <form class="form-inline my-2 my-lg-0 justify-content-end w-100">
+        <input class="form-control mr-sm-2 w-75" placeholder="New Course Title">
+        <button class="btn btn-md btn-primary"><i class="fa fa-1x fa-plus"></i></button>
+      </form>
+    </div>
+    <!--<div class="d-flex flex-row mb-2 justify-content-end">
+      <form class="form-inline my-2 my-lg-0 search-bar-size  justify-content-center ">
+        <input class="form-control mr-sm-2 search-bar-size wbdv-field wbdv-new-course" placeholder="Create a new Course">
+      </form>
+      &lt;!&ndash;<form class="form-inline">
+        <div class="d-sm-none pr-3 mb-2">
+          <input class="form-control" type="search" placeholder="New Course Title" size="20" />
+        </div>
+        <div class="d-sm-block d-md-none d-none pr-3 mb-2">
+          <input class="form-control" type="search" placeholder="New Course Title" size="40" />
+        </div>
+        <div class="d-md-block d-none pr-3 mb-2">
+          <input class="form-control" type="search" placeholder="New Course Title" size="70" />
+        </div>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="mb-2">
+          <button class="btn btn-md btn-primary"><i class="fa fa-1x fa-plus-circle"></i></button>
+        </div>
+      </form>&ndash;&gt;
+    </div>-->
+  </nav>
+  <div class="">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col" style="width: 40%">Title</th>
+        <th scope="col" style="width: 20%" class="d-sm-table-cell d-none">Owned By <i
+            class="fas fa-sort-down"></i></th>
+        <th scope="col" style="width: 20%" class="d-md-table-cell  d-none">Last Modified date</th>
+        <th scope="col" style="width: 10%">
+          <span class="mr-2">
+            <i class="fas fa-list" title="List View"></i>
+          </span>
+          <span class="mr-2">
+            <i class="fas fa-grip-horizontal" title="Grid View"></i>
+          </span>
+          <span class="">
+            <i class="fas fa-sort-alpha-down" title="Sort"></i>
+          </span>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th scope="row"><i class="fas fa-book mr-2"></i><a href="../course-editor/course-editor.template.client.html">CS5010 - Programming Design Paradigm</a></th>
+        <td class="d-sm-table-cell d-none">Mark</td>
+        <td class="d-md-table-cell d-none">Otto</td>
+        <td><i class="fas fa-trash-alt cs5610-trash-color"></i></td>
+      </tr>
+      <tr>
+        <th scope="row"><i class="fas fa-book mr-2"></i><a href="../course-editor/course-editor.template.client.html">Foundation of Artificial Intelligence</a></th>
+        <td class="d-sm-table-cell d-none">Jacob</td>
+        <td class="d-md-table-cell d-none">Thornton</td>
+        <td><i class="fas fa-trash-alt cs5610-trash-color"></i></td>
+      </tr>
+      <tr>
+        <th scope="row"><i class="fas fa-book mr-2"></i><a href="../course-editor/course-editor.template.client.html">Algorithms</a></th>
+        <td class="d-sm-table-cell d-none">Larry</td>
+        <td class="d-md-table-cell d-none">the Bird</td>
+        <td><i class="fas fa-trash-alt cs5610-trash-color"></i></td>
+      </tr>
+      <tr>
+        <th scope="row"><i class="fas fa-book mr-2"></i><a href="../course-editor/course-editor.template.client.html">Web Development</a></th>
+        <td class="d-sm-table-cell d-none">Larry</td>
+        <td class="d-md-table-cell d-none">the Bird</td>
+        <td><i class="fas fa-trash-alt cs5610-trash-color"></i></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
