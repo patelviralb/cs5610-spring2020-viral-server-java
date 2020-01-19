@@ -2,3 +2,33 @@
   font-family: Georigia, serif;
   font-weight: bold;
 }
+
+.cs5610-course-editor-span {
+  color: white;
+  font-size: x-large;
+}
+
+.cs5610-module-title {
+  max-height: 60px;
+  text-align: start;
+}
+
+.cs5610-trash-icon {
+  color: red;
+}
+
+.cs5610-course-editor-division {
+  height: 93vh;
+}
+
+.cs5610-module-list {
+  background-color: #1b1e21;
+}
+
+.cs5610-each-module {
+  height: 60px;
+}
+
+.cs5610-close-course-editor {
+  padding: 0.75rem;
+}

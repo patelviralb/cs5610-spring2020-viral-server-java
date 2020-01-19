@@ -5,28 +5,133 @@
   <title>Title</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="./course-editor.style.client.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-11">
-        <h1 class="cs5610-h1-course-editor">Course Manager</h1>
-      </div>
-      <div class="col-1">
-        <button type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-4">
-
-      </div>
-    </div>
-
-
-
+<nav class="navbar navbar-dark bg-dark">
+  <div class="d-flex flex-row my-0 justify-content-start pt-sm-3 pt-md-0">
+    <a href="../course-list/course-list.template.client.html" class="btn btn-sm btn-dark close cs5610-close-course-editor">
+      <span class="p-3 text-white">&#10005;</span>
+    </a>
+    <span class="p-2 cs5610-course-editor-span ml-2">Course Name</span>
   </div>
+</nav>
+<div class="container-fluid ml-n3 mr-n3 h-100">
+  <div class="row cs5610-course-editor-division">
+    <div class="col-3 cs5610-module-list">
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <!--
+         Large      : pl-lg-3 ml-lg-0
+         Medium     :
+         Small      : ml-sm-3 mr-sm-0
+         Extra Small: ml-1 mr-n2
+        -->
+        <div class="row w-100 cs5610-each-module">
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-book mr-2"></i>
+          </div>
+          <button class="btn btn-dark col-8 d-none d-lg-block cs5610-module-title">
+            Module 1 -
+          </button>
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <!--
+         Large      : pl-lg-3 ml-lg-0
+         Medium     :
+         Small      : ml-sm-3 mr-sm-0
+         Extra Small: ml-1 mr-n2
+        -->
+        <div class="row w-100 cs5610-each-module">
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-book mr-2"></i>
+          </div>
+          <button class="btn btn-dark col-8 d-none d-lg-block cs5610-module-title">
+            Module 2 -
+          </button>
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <!--
+         Large      : pl-lg-3 ml-lg-0
+         Medium     :
+         Small      : ml-sm-3 mr-sm-0
+         Extra Small: ml-1 mr-n2
+        -->
+        <div class="row w-100 cs5610-each-module">
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-book mr-2"></i>
+          </div>
+          <button class="btn btn-dark col-8 d-none d-lg-block cs5610-module-title">
+            Module 3 -
+          </button>
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <!--
+         Large      : pl-lg-3 ml-lg-0
+         Medium     :
+         Small      : ml-sm-3 mr-sm-0
+         Extra Small: ml-1 mr-n2
+        -->
+        <div class="row w-100 cs5610-each-module">
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-book mr-2"></i>
+          </div>
+          <button class="btn btn-dark col-8 d-none d-lg-block cs5610-module-title">
+            Module 4 -
+          </button>
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <!--
+         Large      : pl-lg-3 ml-lg-0
+         Medium     :
+         Small      : ml-sm-3 mr-sm-0
+         Extra Small: ml-1 mr-n2
+        -->
+        <div class="row w-100 cs5610-each-module">
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-book mr-2"></i>
+          </div>
+          <!--<div class="col-8 d-none d-lg-block"
+               style="max-height: 60px">
+            <button class="d-flex justify-content-start btn btn-dark">
+              Module 5 -
+            </button>
+          </div>-->
+          <button class="btn btn-dark col-8 d-none d-lg-block cs5610-module-title">
+            Module 5 -
+          </button>
+          <div class="col-6 col-lg-2 btn-dark d-flex justify-content-center pt-1 pt-sm-3">
+            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center mt-4 pl-lg-3 ml-lg-0 ml-sm-3 mr-sm-0 ml-1 mr-n2">
+        <label class="btn btn-primary">
+          <i class="fa fa-1x fa-plus"></i>
+        </label>
+      </div>
+    </div>
+    <div class="col-9">
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
