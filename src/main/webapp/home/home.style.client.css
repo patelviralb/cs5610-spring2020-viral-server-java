@@ -1,4 +1,16 @@
-.cs5610-h1-home, .cs5610-h4-home {
+/*.cs5610-h1-home {
   font-family: Georigia, serif;
   font-weight: bold;
+  color: white;
+}*/
+
+.cs5610-h4-home {
+  font-family: Georigia, serif;
+  font-weight: bold;
+}
+
+.cs5610-home-span {
+  font-family: Georigia, serif;
+  font-weight: bold;
+  color: white;
 }
