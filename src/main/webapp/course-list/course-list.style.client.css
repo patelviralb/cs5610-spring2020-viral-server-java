@@ -6,3 +6,19 @@
 .cs5610-trash-color {
   color: red;
 }
+
+.vp-cs5610-add-course-button {
+  color: greenyellow;
+}
+
+.vp-cs5610-title-table-width {
+  width: 40%;
+}
+
+.vp-cs5610-owner-column-width {
+  width: 20%;
+}
+
+.vp-cs5610-modified-column-width {
+  width: 20%;
+}
