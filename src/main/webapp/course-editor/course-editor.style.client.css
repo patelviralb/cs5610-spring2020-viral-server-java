@@ -46,3 +46,7 @@
 .vp-cs5610-add-module-button {
   color: greenyellow;
 }
+
+.vp-cs5610-save-topic {
+  min-width: 50px;
+}
