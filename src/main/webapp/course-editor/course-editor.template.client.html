@@ -6,178 +6,243 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
-  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
-        rel="stylesheet">
   <link rel="stylesheet" href="./course-editor.style.client.css">
-  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-  <div class="d-flex flex-row my-0 justify-content-start pt-sm-3 pt-md-0">
-    <a href="../course-list/course-list.template.client.html"
-       class="btn btn-sm btn-dark close cs5610-close-course-editor">
-      <span class="p-3 text-white">&#10005;</span>
-    </a>
-    <span class="p-2 cs5610-course-editor-span ml-2">Course Name</span>
-  </div>
-  <!--<div class="justify-content-end">
-    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#cs5610-module-list">
-      &lt;!&ndash;<i class="fas fa-bars"></i>&ndash;&gt;
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>-->
-</nav>
-<div class="container-fluid ml-n3 mr-n3 h-100">
-  <div class="row cs5610-course-editor-division h-100">
-    <div class="col-lg-3 col-12 cs5610-module-list">
-      <div class="d-flex justify-content-center mt-4">
-        <div class="row w-100 cs5610-each-module">
-          <button class="btn btn-dark col-10 cs5610-module-title">
-            <i class="fas fa-book mr-2"></i>Module 1 -
-          </button>
-          <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
-            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center mt-4">
-        <div class="row w-100 cs5610-each-module">
-          <button class="btn btn-dark col-10 cs5610-module-title">
-            <i class="fas fa-book mr-2"></i>Module 2 -
-          </button>
-          <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
-            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center mt-4">
-        <div class="row w-100 cs5610-each-module">
-          <button class="btn btn-dark col-10 cs5610-module-title">
-            <i class="fas fa-book mr-2"></i>Module 3 -
-          </button>
-          <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
-            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
-          </div>
-        </div>
-      </div>
-      <div class="d-flex justify-content-center mt-4">
-        <div class="row w-100 cs5610-each-module">
-          <button class="btn btn-dark col-10 cs5610-module-title">
-            <i class="fas fa-book mr-2"></i>Module 4 -
-          </button>
-          <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
-            <i class="fas fa-trash-alt cs5610-trash-icon"></i>
-          </div>
-        </div>
-      </div>
-
-      <div class="d-flex justify-content-center mt-4 mb-4">
-        <div class="row w-100 cs5610-each-module">
-          <input type="text" class="col-10 cs5610-module-title" placeholder="New Course Module"/>
-          <div class="col-2 btn-success d-flex justify-content-center cs5610-icon-padding">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
-      </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="d-flex flex-row my-0 justify-content-start pt-sm-3 pt-md-0">
+      <a href="../course-list/course-list.template.client.html"
+         class="btn btn-sm btn-dark close cs5610-close-course-editor">
+        <span class="p-3 text-white">&#10005;</span>
+      </a>
+      <span class="p-2 cs5610-course-editor-span ml-2">Course Name</span>
     </div>
+    <!--<div class="justify-content-end">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#cs5610-module-list">
+        &lt;!&ndash;<i class="fas fa-bars"></i>&ndash;&gt;
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>-->
+  </nav>
+  <div class="container-fluid ml-n3 mr-n3 h-100">
+    <div class="row cs5610-course-editor-division h-100">
+      <div class="col-lg-3 col-12 cs5610-module-list">
+        <div class="d-flex justify-content-center mt-4">
+          <div class="row w-100 cs5610-each-module">
+            <button class="btn btn-dark col-10 cs5610-module-title">
+              <i class="fas fa-book mr-2"></i>Module 1 -
+            </button>
+            <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
+              <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <div class="row w-100 cs5610-each-module">
+            <button class="btn btn-dark col-10 cs5610-module-title">
+              <i class="fas fa-book mr-2"></i>Module 2 -
+            </button>
+            <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
+              <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <div class="row w-100 cs5610-each-module">
+            <button class="btn btn-dark col-10 cs5610-module-title">
+              <i class="fas fa-book mr-2"></i>Module 3 -
+            </button>
+            <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
+              <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4">
+          <div class="row w-100 cs5610-each-module">
+            <button class="btn btn-dark col-10 cs5610-module-title">
+              <i class="fas fa-book mr-2"></i>Module 4 -
+            </button>
+            <div class="col-2 btn-dark d-flex justify-content-center cs5610-icon-padding">
+              <i class="fas fa-trash-alt cs5610-trash-icon"></i>
+            </div>
+          </div>
+        </div>
 
-    <div class="col-lg-9 col-12 container-fluid">
-      <div class="nav nav-tabs pt-3 border-dark">
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label
-              class="form-control nav-link d-flex justify-content-center">
-            <span class="text-dark">Build</span>
-          </label>
-        </div>
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label class="form-control nav-link d-flex justify-content-center active border-dark border-bottom-0">
-            <span class="text-dark">Page</span>
-          </label>
-        </div>
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label class="form-control nav-link d-flex justify-content-center">
-            <span class="text-dark">Theme</span>
-          </label>
-        </div>
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label class="form-control nav-link d-flex justify-content-center">
-            <span class="text-dark">Store</span>
-          </label>
-        </div>
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label class="form-control nav-link d-flex justify-content-center">
-            <span class="text-dark">Apps</span>
-          </label>
-        </div>
-
-        <div class="nav-item pr-3 cs5610-nav-item">
-          <label class="form-control btn btn-primary">
-            <i class="fas fa-plus"></i>
-          </label>
+        <div class="d-flex justify-content-center mt-4 mb-4">
+          <div class="row w-100 cs5610-each-module">
+            <input type="text" class="col-10 cs5610-module-title" placeholder="New Course Module"/>
+            <div class="col-2 btn-info d-flex justify-content-center cs5610-icon-padding">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div>
-        <div class="nav nav-pills pt-3">
+      <div class="col-lg-9 col-12 ml-2 ml-lg-0">
+        <div class="nav nav-tabs pt-3 border-dark">
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control nav-link d-flex justify-content-center bg-secondary">
-              <span class="text-white">Topic 1</span>
+            <label
+                class="nav-link d-flex justify-content-center">
+              <span class="text-dark">Build</span>
             </label>
           </div>
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control nav-link d-flex justify-content-center bg-secondary">
-              <span class="text-white">Topic 3</span>
+            <label class="nav-link d-flex justify-content-center active border-dark border-bottom-0">
+              <span class="text-dark">Page</span>
             </label>
           </div>
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control nav-link d-flex justify-content-center bg-secondary">
-              <span class="text-white">Topic 3</span>
+            <label class="nav-link d-flex justify-content-center">
+              <span class="text-dark">Theme</span>
             </label>
           </div>
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control nav-link d-flex justify-content-center active bg-dark">
-              <span class="text-white">Topic 4</span>
+            <label class="nav-link d-flex justify-content-center">
+              <span class="text-dark">Store</span>
             </label>
           </div>
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control nav-link d-flex justify-content-center bg-secondary">
-              <span class="text-white">Topic 5</span>
+            <label class="nav-link d-flex justify-content-center">
+              <span class="text-dark">Apps</span>
             </label>
           </div>
 
           <div class="nav-item pr-3 cs5610-nav-item">
-            <label class="form-control btn btn-outline-primary">
+            <label class="form-control btn btn-primary">
               <i class="fas fa-plus"></i>
             </label>
           </div>
         </div>
-      </div>
 
-      <div>
-        <div class="form-group row">
-          <label class="col-1 form-control btn btn-success ml-4 m-4 w-auto d-flex justify-content-center" style="min-width: 50px;">
-            Save
-          </label>
-          <div class="col-1 custom-control custom-switch ml-1 cs5610-preview-switch">
-            <input type="checkbox" class="custom-control-input" id="cs5610-preview-switch">
-            <label class="custom-control-label" for="cs5610-preview-switch">Preview</label>
+        <div>
+          <div class="nav nav-pills pt-3">
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control nav-link d-flex justify-content-center bg-secondary">
+                <span class="text-white">Topic 1</span>
+              </label>
+            </div>
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control nav-link d-flex justify-content-center bg-secondary">
+                <span class="text-white">Topic 3</span>
+              </label>
+            </div>
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control nav-link d-flex justify-content-center bg-secondary">
+                <span class="text-white">Topic 3</span>
+              </label>
+            </div>
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control nav-link d-flex justify-content-center active bg-dark">
+                <span class="text-white">Topic 4</span>
+              </label>
+            </div>
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control nav-link d-flex justify-content-center bg-secondary">
+                <span class="text-white">Topic 5</span>
+              </label>
+            </div>
+
+            <div class="nav-item pr-3 cs5610-nav-item">
+              <label class="form-control btn btn-outline-primary">
+                <i class="fas fa-plus"></i>
+              </label>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="container-fluid border-dark" style="border: #1c7430">
-        <div class="row border-dark">
-          <div class="col-12 border-dark">
-
+        <div>
+          <div class="row">
+            <div class="col-12 d-flex justify-content-end">
+              <div class="custom-control custom-switch pt-2">
+                <input type="checkbox" class="custom-control-input" id="cs5610-preview-switch">
+                <label class="custom-control-label" for="cs5610-preview-switch">Preview</label>
+              </div>
+              <label class="form-control btn btn-success ml-4 w-auto d-flex justify-content-center" style="min-width: 50px;">
+                Save
+              </label>
+            </div>
           </div>
         </div>
-      </div>
 
+        <div class="container-fluid">
+          <div class="row border border-warning rounded">
+
+            <div class="col-12 d-flex justify-content-end pt-3">
+              <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                  <button class="btn btn-secondary">
+                    <i class="fas fa-arrow-up"></i>
+                  </button>
+                  <button class="btn btn-secondary ml-2">
+                    <i class="fas fa-arrow-down"></i>
+                  </button>
+                  <select name="widget-selector" class="form-control ml-2" id="widget-selector">
+                    <option value="heading-widget">Heading</option>
+                    <option value="paragraph">Paragraph</option>
+                  </select>
+                  <button class="btn btn-warning ml-2">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-3">
+              <h2>Heading Widget</h2>
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-3">
+              <input type="text" class="form-control" placeholder="Heading Text" />
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-3">
+              <select name="heading-selector" class="form-control">
+                <option value="h1">Heading 1</option>
+                <option value="h2">Heading 2</option>
+                <option value="h3">Heading 3</option>
+                <option value="h4">Heading 4</option>
+                <option value="h5">Heading 5</option>
+                <option value="h6">Heading 6</option>
+                <option value="h7">Heading 7</option>
+              </select>
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-3">
+              <input type="text" class="form-control" placeholder="Widget Name" />
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-4">
+              <h3>Preview</h3>
+            </div>
+
+            <div class="col-12 d-flex justify-content-start pt-4">
+              <h1>Heading Text</h1>
+            </div>
+
+            <div class="col-12 pb-3">
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 d-flex justify-content-end pt-4">
+              <button class="btn btn-warning ml-2">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 pb-4">
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
     </div>
-
   </div>
-</div>
-</div>
 </body>
 </html>
