@@ -18,11 +18,13 @@
 }
 
 .cs5610-course-editor-division {
-  height: 93vh;
+  min-height: 93vh;
+  margin-right: -1.95rem;
 }
 
 .cs5610-module-list {
   background-color: #1b1e21;
+  padding-left: 2.00rem;
 }
 
 .cs5610-each-module {
@@ -31,4 +33,21 @@
 
 .cs5610-close-course-editor {
   padding: 0.75rem;
+}
+
+.cs5610-icon-padding {
+  padding-top: 1.25rem;
+  /*padding-left: 1.25rem;*/
+}
+
+.cs5610-nav-item {
+  min-width: 7.5%;
+}
+
+.cs5610-save-and-preview {
+  min-width: 7.5%;
+}
+
+.cs5610-preview-switch {
+  padding-top: 2.0rem;
 }
