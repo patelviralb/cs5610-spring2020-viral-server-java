@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="./user-admin.style.client.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="d-flex flex-row my-0 justify-content-start pt-sm-3 pt-md-0">
+    <span
+        class="p-2 vp-cs5610-user-admin-span ml-2">User Admin</span>
+  </div>
+</nav>
+<div class="container-fluid pt-3">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th class="vp-cs5610-table-header-gen">
+            <span class=" d-flex justify-content-center">Username</span>
+          </th>
+          <th class="vp-cs5610-table-header-gen">
+            <span class=" d-flex justify-content-center">Password</span>
+          </th>
+          <th class="vp-cs5610-table-header-gen">
+            <span class=" d-flex justify-content-center">First Name</span>
+          </th>
+          <th class="vp-cs5610-table-header-gen">
+            <span class=" d-flex justify-content-center">Last Name</span>
+          </th>
+          <th class="vp-cs5610-table-header-small">
+            <span class=" d-flex justify-content-center">Role</span>
+          </th>
+          <th class="vp-cs5610-table-header-small">
+
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <input type="text" class="form-control" placeholder="Username"/>
+          </td>
+          <td>
+            <input type="password" class="form-control" placeholder="Password"/>
+          </td>
+          <td>
+            <input type="text" class="form-control" placeholder="First Name"/>
+          </td>
+          <td>
+            <input type="text" class="form-control" placeholder="Last Name"/>
+          </td>
+          <td>
+            <select name="user-role" class="form-control">
+              <option value="faculty">Faculty</option>
+              <option value="faculty">Student</option>
+              <option value="faculty">Admin</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn btn-dark mt-2">
+              <i class="fa fa-search"></i>
+            </button>
+            <button class="btn btn-success mt-2">
+              <i class="fa fa-plus"></i>
+            </button>
+            <button class="btn btn-success mt-2">
+              <i class="fa fa-check"></i>
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <span>Username 1</span>
+          </td>
+          <td>
+            <span></span>
+          </td>
+          <td>
+            <span>First Name 1</span>
+          </td>
+          <td>
+            <span>Last Name 1</span>
+          </td>
+          <td>
+            <span>Role 1</span>
+          </td>
+          <td>
+            <button class="btn btn-danger mt-2">
+              <i class="fa fa-trash"></i>
+            </button>
+            <button class="btn btn-warning mt-2">
+              <i class="fa fa-edit"></i>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

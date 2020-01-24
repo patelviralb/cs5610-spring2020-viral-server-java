@@ -1,0 +1,19 @@
+.vp-cs5610-user-admin-span {
+  font-family: Georigia, serif;
+  font-weight: bold;
+  color: white;
+  font-size: xx-large;
+}
+
+.vp-cs5610-table-header-gen {
+  width: 20%;
+}
+
+.vp-cs5610-table-header-small {
+  width: 10%;
+}
+
+.vp-cs5610-edit-btn-outline {
+  box-shadow: 0 0 0 .2rem;
+  color: orange;
+}
