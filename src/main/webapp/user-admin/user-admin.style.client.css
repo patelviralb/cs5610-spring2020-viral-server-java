@@ -17,3 +17,7 @@
   box-shadow: 0 0 0 .2rem;
   color: orange;
 }
+
+.vp-cs5610-row-template-hidden {
+  display: none;
+}

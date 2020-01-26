@@ -12,7 +12,7 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="d-flex flex-row my-0 justify-content-start pt-sm-3 pt-md-0">
     <span
-        class="p-2 vp-cs5610-user-admin-span ml-2">User Admin</span>
+        class="vp-cs5610-user-admin-span ml-2">User Admin</span>
   </div>
 </nav>
 <div class="container-fluid pt-3">
@@ -40,68 +40,72 @@
 
           </th>
         </tr>
-        </thead>
-        <tbody>
+
         <tr>
           <td>
-            <input type="text" class="form-control" placeholder="Username"/>
+            <input type="text" class="form-control" placeholder="Username" id="usernameFld" />
           </td>
           <td>
-            <input type="password" class="form-control" placeholder="Password"/>
+            <input type="password" class="form-control" placeholder="Password" id="passwordFld" />
           </td>
           <td>
-            <input type="text" class="form-control" placeholder="First Name"/>
+            <input type="text" class="form-control" placeholder="First Name" id="firstNameFld" />
           </td>
           <td>
-            <input type="text" class="form-control" placeholder="Last Name"/>
+            <input type="text" class="form-control" placeholder="Last Name" id="lastNameFld" />
           </td>
           <td>
-            <select name="user-role" class="form-control">
+            <select name="user-role" class="form-control" id="roleFld">
               <option value="faculty">Faculty</option>
-              <option value="faculty">Student</option>
-              <option value="faculty">Admin</option>
+              <option value="student">Student</option>
+              <option value="admin">Admin</option>
             </select>
           </td>
           <td>
-            <button class="btn btn-dark mt-2">
+            <button class="btn btn-dark mt-2" id="searchUserBtn">
               <i class="fa fa-search"></i>
             </button>
-            <button class="btn btn-success mt-2">
+            <button class="btn btn-success mt-2" id="addUserBtn">
               <i class="fa fa-plus"></i>
             </button>
-            <button class="btn btn-success mt-2">
+            <button class="btn btn-secondary mt-2" id="updateUserBtn" disabled>
               <i class="fa fa-check"></i>
             </button>
           </td>
         </tr>
 
-        <tr>
+        <tr id="vp-cs5610-row-template" class="vp-cs5610-row-template-hidden">
           <td>
-            <span>Username 1</span>
+            <span class="vp-cs5610-template-username"></span>
           </td>
           <td>
-            <span></span>
+            <span class="vp-cs5610-template-password"></span>
           </td>
           <td>
-            <span>First Name 1</span>
+            <span class="vp-cs5610-template-firstName"></span>
           </td>
           <td>
-            <span>Last Name 1</span>
+            <span class="vp-cs5610-template-lastName"></span>
           </td>
           <td>
-            <span>Role 1</span>
+            <span class="vp-cs5610-template-role"></span>
           </td>
           <td>
-            <button class="btn btn-danger mt-2">
+            <button class="btn btn-danger mt-2" id="deleteUserBtn">
               <i class="fa fa-trash"></i>
             </button>
-            <button class="btn btn-warning mt-2">
+            <button class="btn btn-warning mt-2" id="editUserBtn">
               <i class="fa fa-edit"></i>
             </button>
           </td>
         </tr>
+        </thead>
+        <tbody>
         </tbody>
       </table>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="../services/user.service.client.js"></script>
+      <script src="user-admin.controller.client.js"></script>
     </div>
   </div>
 </div>
