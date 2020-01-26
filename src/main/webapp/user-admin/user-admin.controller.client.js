@@ -13,7 +13,7 @@
   DONE//function deleteUser() { … }
   function selectUser() { … }
   function updateUser() { … }
-  function renderUser(user) { … }
+  DONE//function renderUser(user) { … }
   DONE//function renderUsers(users) { … }*/
 
   let userService = new AdminUserServiceClient();
@@ -30,11 +30,26 @@
     findAllUsers();
 
     $addUserBtn.click(createUser);
+
+    /**/
+    /*var testUser = {
+      "username"  : "Edited User",
+      "password"  : "Password",
+      "firstName" : "Edited First Name",
+      "lastName" : "Edited Last Name",
+      "role" : "Edited Role"
+    };
+    userService.updateUser("FCbR5uj2FXT63Y3Z", testUser).then(() => {
+      alert("EDITED");
+    });*/
+    /**/
   };
 
   const findAllUsers = () => {
     userService.findAllUsers().then(renderUsers);
   };
+
+
 
   const createUser = () => {
     $usernameFld = $('#usernameFld');
@@ -58,6 +73,12 @@
     };
 
     userService.createUser(user).then(renderUser);
+
+    $usernameFld.val("");
+    $passwordFld.val("");
+    $firstNameFld.val("");
+    $lastNameFld.val("");
+    $roleFld.prop('selectedIndex',0);
   };
 
   const renderUsers = (allUsers) => {
@@ -66,7 +87,8 @@
     for(var userIndex in allUsers) {
 
       const eachUser = allUsers[userIndex];
-      const rowToClone = $rowTemplate.clone();
+      renderUser(eachUser);
+      /*const rowToClone = $rowTemplate.clone();
 
       rowToClone.removeClass('vp-cs5610-row-template-hidden');
       rowToClone.attr('id',eachUser._id);
@@ -76,8 +98,8 @@
       rowToClone.find('.vp-cs5610-template-lastName').html(eachUser.lastName);
       rowToClone.find('.vp-cs5610-template-role').html(eachUser.role);
       rowToClone.find('.vp-cs5610-template-delete-btn').click(() => deleteUser(eachUser._id));
-      /*rowToClone.find('.vp-cs5610-template-edit-btn').click(() => #(eachUser._id));*/
-      $tableBody.append(rowToClone);
+      /!*rowToClone.find('.vp-cs5610-template-edit-btn').click(() => #(eachUser._id));*!/
+      $tableBody.append(rowToClone);*/
     }
   };
 
@@ -86,15 +108,16 @@
   };
 
   const removeRow = (userID) => {
-    let $elementToRemove = $(`#${userID}`);
+    let $elementToRemove = $(`#deleteBtn_${userID}`);
     $elementToRemove.remove();
-  }
+  };
 
   const renderUser = (user) => {
     console.log(user);
     const rowToClone = $rowTemplate.clone();
 
     rowToClone.removeClass('vp-cs5610-row-template-hidden');
+    rowToClone.attr('id',"deleteBtn_" + user._id);
     rowToClone.find('.vp-cs5610-template-username').html(user.username);
     rowToClone.find('.vp-cs5610-template-password').html(user.password);
     rowToClone.find('.vp-cs5610-template-firstName').html(user.firstName);
