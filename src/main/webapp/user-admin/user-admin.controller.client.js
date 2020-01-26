@@ -8,13 +8,13 @@
 
   /*function main() { … }
   DONE//function createUser() { … }
-  function findAllUsers() { … }
+  DONE//function findAllUsers() { … }
   function findUserById() { … }
-  function deleteUser() { … }
+  DONE//function deleteUser() { … }
   function selectUser() { … }
   function updateUser() { … }
   function renderUser(user) { … }
-  function renderUsers(users) { … }*/
+  DONE//function renderUsers(users) { … }*/
 
   let userService = new AdminUserServiceClient();
   let $usernameFld, $passwordFld, $firstNameFld, $lastNameFld, $roleFld;
@@ -23,13 +23,17 @@
 
   const main = () => {
     $tableBody = $('tbody');
-    $rowTemplate = $('#vp-cs5610-row-template');
+    $rowTemplate = $('.vp-cs5610-row-template');
     $addUserBtn = $('#addUserBtn');
     $updateUserBtn = $('#updateUserBtn');
 
-    userService.findAllUsers().then(renderUsers);
+    findAllUsers();
 
     $addUserBtn.click(createUser);
+  };
+
+  const findAllUsers = () => {
+    userService.findAllUsers().then(renderUsers);
   };
 
   const createUser = () => {
@@ -53,7 +57,7 @@
       "role" : role
     };
 
-    userService.createUser(user).then(renderUsers);
+    userService.createUser(user).then(renderUser);
   };
 
   const renderUsers = (allUsers) => {
@@ -65,19 +69,41 @@
       const rowToClone = $rowTemplate.clone();
 
       rowToClone.removeClass('vp-cs5610-row-template-hidden');
+      rowToClone.attr('id',eachUser._id);
       rowToClone.find('.vp-cs5610-template-username').html(eachUser.username);
       rowToClone.find('.vp-cs5610-template-password').html(eachUser.password);
       rowToClone.find('.vp-cs5610-template-firstName').html(eachUser.firstName);
       rowToClone.find('.vp-cs5610-template-lastName').html(eachUser.lastName);
       rowToClone.find('.vp-cs5610-template-role').html(eachUser.role);
+      rowToClone.find('.vp-cs5610-template-delete-btn').click(() => deleteUser(eachUser._id));
+      /*rowToClone.find('.vp-cs5610-template-edit-btn').click(() => #(eachUser._id));*/
       $tableBody.append(rowToClone);
     }
   };
 
-  const testClick = () => {
-    alert("Done")
+  const deleteUser = (userID) => {
+    userService.deleteUser(userID).then(() => removeRow(userID))
   };
+
+  const removeRow = (userID) => {
+    let $elementToRemove = $(`#${userID}`);
+    $elementToRemove.remove();
+  }
+
+  const renderUser = (user) => {
+    console.log(user);
+    const rowToClone = $rowTemplate.clone();
+
+    rowToClone.removeClass('vp-cs5610-row-template-hidden');
+    rowToClone.find('.vp-cs5610-template-username').html(user.username);
+    rowToClone.find('.vp-cs5610-template-password').html(user.password);
+    rowToClone.find('.vp-cs5610-template-firstName').html(user.firstName);
+    rowToClone.find('.vp-cs5610-template-lastName').html(user.lastName);
+    rowToClone.find('.vp-cs5610-template-role').html(user.role);
+    rowToClone.find('.vp-cs5610-template-delete-btn').click(() => deleteUser(user._id));
+    /*rowToClone.find('.vp-cs5610-template-edit-btn').click(() => #(user._id));*/
+    $tableBody.prepend(rowToClone);
+  };
+
   $(main);
-
-
 })();

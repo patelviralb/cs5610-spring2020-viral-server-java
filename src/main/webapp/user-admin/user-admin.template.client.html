@@ -7,6 +7,7 @@
         rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="./user-admin.style.client.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -17,7 +18,7 @@
 </nav>
 <div class="container-fluid pt-3">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 table-responsive">
       <table class="table table-striped">
         <thead>
         <tr>
@@ -74,7 +75,7 @@
           </td>
         </tr>
 
-        <tr id="vp-cs5610-row-template" class="vp-cs5610-row-template-hidden">
+        <tr class="vp-cs5610-row-template vp-cs5610-row-template-hidden">
           <td>
             <span class="vp-cs5610-template-username"></span>
           </td>
@@ -91,10 +92,10 @@
             <span class="vp-cs5610-template-role"></span>
           </td>
           <td>
-            <button class="btn btn-danger mt-2" id="deleteUserBtn">
+            <button class="btn btn-danger mt-2 vp-cs5610-template-delete-btn" id="deleteUserBtn">
               <i class="fa fa-trash"></i>
             </button>
-            <button class="btn btn-warning mt-2" id="editUserBtn">
+            <button class="btn btn-warning mt-2 vp-cs5610-template-edit-btn" id="editUserBtn">
               <i class="fa fa-edit"></i>
             </button>
           </td>
