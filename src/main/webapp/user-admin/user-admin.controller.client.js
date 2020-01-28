@@ -1,7 +1,7 @@
 (function () {
   let userService = new AdminUserServiceClient();
   let $usernameFld, $passwordFld, $firstNameFld, $lastNameFld, $roleFld;
-  let $addUserBtn, $updateUserBtn;
+  let $addUserBtn, $updateUserBtn, $searchUserBtn;
   let $tableBody, $rowTemplate;
 
   /**
@@ -16,12 +16,15 @@
     $firstNameFld = $('#firstNameFld');
     $lastNameFld = $('#lastNameFld');
     $roleFld = $('#roleFld');
+
     $addUserBtn = $('#addUserBtn');
     $updateUserBtn = $('#updateUserBtn');
+    $searchUserBtn = $('#searchUserBtn');
 
     findAllUsers();
 
     $addUserBtn.click(createUser);
+    $searchUserBtn.click(searchUser);
   };
 
   const createUser = () => {
@@ -145,6 +148,47 @@
     $firstNameFld.val("");
     $lastNameFld.val("");
     $roleFld.prop('selectedIndex',0);
+  };
+
+  const searchUser = () => {
+    userService.findAllUsers().then(renderFilteredUser);
+  };
+
+  const renderFilteredUser = (users) => {
+    let username = $usernameFld.val();
+    let firstName = $firstNameFld.val();
+    let lastName = $lastNameFld.val();
+    let role = $roleFld.val();
+
+    /*console.log(users);*/
+    let filteredArray = users;
+
+    if (username !== ""){
+      filteredArray = filteredArray.filter(filterUserName => filterUserName.username === username);
+    }
+    if (firstName !== ""){
+      filteredArray = filteredArray.filter(filterUserName => filterUserName.firstName === firstName);
+    }
+    if (lastName !== ""){
+      filteredArray = filteredArray.filter(filterUserName => filterUserName.lastName === lastName);
+    }
+    if (role !== "none"){
+      filteredArray = filteredArray.filter(filterUserName => filterUserName.role === role);
+    }
+
+    /*console.log(filteredArray);*/
+    console.log(filteredArray.length);
+    if(filteredArray.length != 0) {
+      renderUsers(filteredArray);
+    } else {
+      renderUsers(users);
+      $('#vp-cs5610-no-user-found-error').removeClass("d-none");
+      setTimeout(() => {$('#vp-cs5610-no-user-found-error').addClass("d-none")},1500);
+
+      /*$('#vp-cs5610-no-user-found-error').addClass("d-none");*/
+      /*alert("Kool");*/
+    }
+    clearAllFields();
   };
 
   $(main);

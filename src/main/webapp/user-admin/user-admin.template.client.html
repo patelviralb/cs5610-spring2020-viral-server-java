@@ -16,6 +16,9 @@
         class="vp-cs5610-user-admin-span ml-2">User Admin</span>
   </div>
 </nav>
+<div id="vp-cs5610-no-user-found-error" class="alert alert-danger d-none">
+  <strong class="d-flex justify-content-center">No User present with provided data!</strong>
+</div>
 <div class="container-fluid pt-3">
   <div class="row">
     <div class="col-12 table-responsive">
@@ -106,6 +109,7 @@
         <tbody>
         </tbody>
       </table>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="../services/user.service.client.js"></script>
       <script src="user-admin.controller.client.js"></script>
