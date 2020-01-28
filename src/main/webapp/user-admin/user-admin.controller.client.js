@@ -81,7 +81,8 @@
     const rowToClone = $rowTemplate.clone();
 
     rowToClone.removeClass('vp-cs5610-row-template-hidden');
-    rowToClone.attr('id',"userRow_" + user._id);
+    rowToClone.removeClass('vp-cs5610-row-template');
+    rowToClone.attr('id',"vp-cs5610-user-row-" + user._id);
     rowToClone.find('.vp-cs5610-template-username').html(user.username);
     rowToClone.find('.vp-cs5610-template-password').html(user.password);
     rowToClone.find('.vp-cs5610-template-firstName').html(user.firstName);
@@ -103,7 +104,7 @@
   };
 
   /**
-   * Helper function
+   * Helper functions
    */
   const makeUserData = () => {
     let username = $usernameFld.val();
@@ -124,16 +125,17 @@
   };
 
   const removeRow = (userID) => {
-    let $elementToRemove = $(`#userRow_${userID}`);
+    let $elementToRemove = $(`#vp-cs5610-user-row-${userID}`);
     $elementToRemove.remove();
 
     clearAllFields();
   };
 
   const renderUpdatedUser = (userData) => {
-    let elementToUpdate = $(`#userRow_${userData._id}`);
+    let elementToUpdate = $(`#vp-cs5610-user-row-${userData._id}`);
     elementToUpdate.remove();
     renderUser(userData);
+
     clearAllFields();
   };
 
