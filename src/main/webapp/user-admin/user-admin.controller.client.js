@@ -11,15 +11,15 @@
     $tableBody = $('tbody');
     $rowTemplate = $('.vp-cs5610-row-template');
 
-    $usernameFld = $('#usernameFld');
-    $passwordFld = $('#passwordFld');
-    $firstNameFld = $('#firstNameFld');
-    $lastNameFld = $('#lastNameFld');
-    $roleFld = $('#roleFld');
+    $usernameFld = $('#vp-cs5610-usernameFld');
+    $passwordFld = $('#vp-cs5610-passwordFld');
+    $firstNameFld = $('#vp-cs5610-firstNameFld');
+    $lastNameFld = $('#vp-cs5610-lastNameFld');
+    $roleFld = $('#vp-cs5610-roleFld');
 
-    $addUserBtn = $('#addUserBtn');
-    $updateUserBtn = $('#updateUserBtn');
-    $searchUserBtn = $('#searchUserBtn');
+    $addUserBtn = $('#vp-cs5610-addUserBtn');
+    $updateUserBtn = $('#vp-cs5610-updateUserBtn');
+    $searchUserBtn = $('#vp-cs5610-searchUserBtn');
 
     findAllUsers();
 
@@ -160,7 +160,6 @@
     let lastName = $lastNameFld.val();
     let role = $roleFld.val();
 
-    /*console.log(users);*/
     let filteredArray = users;
 
     if (username !== ""){
@@ -176,7 +175,6 @@
       filteredArray = filteredArray.filter(filterUserName => filterUserName.role === role);
     }
 
-    /*console.log(filteredArray);*/
     console.log(filteredArray.length);
     if(filteredArray.length != 0) {
       renderUsers(filteredArray);
@@ -184,9 +182,6 @@
       renderUsers(users);
       $('#vp-cs5610-no-user-found-error').removeClass("d-none");
       setTimeout(() => {$('#vp-cs5610-no-user-found-error').addClass("d-none")},1500);
-
-      /*$('#vp-cs5610-no-user-found-error').addClass("d-none");*/
-      /*alert("Kool");*/
     }
     clearAllFields();
   };
