@@ -8,6 +8,14 @@ import java.util.stream.Collectors;
 public class WidgetService {
   private List<Widget> widgetList = new ArrayList<>();
 
+  public WidgetService() {
+    Widget newWidget = new Widget();
+    newWidget.setId("123456");
+    newWidget.setName("First Widget");
+    newWidget.setOrder(1);
+    this.widgetList.add(newWidget);
+  }
+
   public Widget createWidget(String topicID, Widget newWidgetToAdd) {
     this.widgetList.add(newWidgetToAdd);
     return newWidgetToAdd;
