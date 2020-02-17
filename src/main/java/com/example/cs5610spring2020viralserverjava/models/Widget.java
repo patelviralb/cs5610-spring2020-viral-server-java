@@ -1,5 +1,8 @@
 package com.example.cs5610spring2020viralserverjava.models;
 
+/**
+ * Class represents a single Widget component.
+ */
 public class Widget {
   private String name;
   private String id;
@@ -13,6 +16,10 @@ public class Widget {
   private String cssClass;
   private String style;
   private String value;
+  private String topicID;
+
+  public Widget() {
+  }
 
   public String getName() {
     return name;
@@ -96,5 +103,12 @@ public class Widget {
   }
   public void setValue(String value) {
     this.value = value;
+  }
+
+  public String getTopicID() {
+    return topicID;
+  }
+  public void setTopicID(String topicID) {
+    this.topicID = topicID;
   }
 }
