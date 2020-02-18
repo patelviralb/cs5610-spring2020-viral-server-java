@@ -1,7 +1,9 @@
 package com.example.cs5610spring2020viralserverjava.services;
 
 import com.example.cs5610spring2020viralserverjava.models.Widget;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,14 +11,15 @@ public class WidgetService {
   private List<Widget> widgetList = new ArrayList<>();
 
   public WidgetService() {
-    Widget newWidget = new Widget();
+    /*Widget newWidget = new Widget();
     newWidget.setId("123456");
     newWidget.setName("First Widget");
     newWidget.setOrder(1);
-    this.widgetList.add(newWidget);
+    this.widgetList.add(newWidget);*/
   }
 
   public Widget createWidget(String topicID, Widget newWidgetToAdd) {
+    newWidgetToAdd.setId(new SimpleDateFormat("YYYY.MM.dd.HH.mm.ss").format(new Date()));
     this.widgetList.add(newWidgetToAdd);
     return newWidgetToAdd;
   }
