@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class WidgetService {
   private List<Widget> widgetList = new ArrayList<>();
+  private static int order;
 
   public WidgetService() {
     /*Widget newWidget = new Widget();
@@ -16,10 +17,19 @@ public class WidgetService {
     newWidget.setName("First Widget");
     newWidget.setOrder(1);
     this.widgetList.add(newWidget);*/
+    this.order = 0;
   }
 
   public Widget createWidget(String topicID, Widget newWidgetToAdd) {
     newWidgetToAdd.setId(new SimpleDateFormat("YYYY.MM.dd.HH.mm.ss").format(new Date()));
+    this.order++;
+    newWidgetToAdd.setOrder(this.order);
+    /*if (!widgetList.isEmpty()) {
+      newWidgetToAdd.setOrder(widgetList.get(widgetList.size() - 1).getOrder() + 1);
+      newWidgetToAdd.setOrder();
+    } else {
+      newWidgetToAdd.setOrder(1);
+    }*/
     this.widgetList.add(newWidgetToAdd);
     return newWidgetToAdd;
   }
