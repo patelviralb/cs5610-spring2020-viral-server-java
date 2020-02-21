@@ -46,4 +46,9 @@ public class WidgetController {
   public int deleteWidget(@PathVariable("widgetID") String widgetID) {
     return this.widgetService.deleteWidget(widgetID);
   }
+
+  @PostMapping("/api/topics/{topicID}/widgets/allWidgets")
+  public int updateAllWidgets(@PathVariable("topicID") String topicID, @RequestBody List<Widget> allWidgetsToUpdate) {
+    return this.widgetService.updateAllWidgets(topicID, allWidgetsToUpdate);
+  }
 }
