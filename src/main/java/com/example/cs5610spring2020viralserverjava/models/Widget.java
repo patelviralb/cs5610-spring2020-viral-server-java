@@ -1,14 +1,25 @@
 package com.example.cs5610spring2020viralserverjava.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Class represents a single Widget component.
  */
+@Entity
+@Table(name ="widgets")
 public class Widget {
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
+
   private String name; //Optional name of the widget
-  private String id; //Widget's unique identifier
   private String type; //Type of the widget, e.g., Heading, List, Paragraph, Image, YouTube, HTML, Link
-  private int order; //Order with respect to widgets in the same list
+  private int orderOfWidget; //Order with respect to widgets in the same list
   private String text; //Plain text useful for heading text, paragraph text, link text, etc
   private String source; //Absolute or relative URL referring to online resource
   private int size; //Useful to represent size of widget, e.g., heading size
@@ -17,7 +28,7 @@ public class Widget {
   private String cssClass; //CSS class implementing some CSS rule and transformations configured in some CSS rule
   private String style; //CSS transformations applied to the widget
   private String value; //Some arbitrary initial value interpreted by the widget
-  private String topicID; //Topic ID for the widget
+  private Integer topicID; //Topic ID for the widget
 
   public Widget() {
   }
@@ -30,11 +41,11 @@ public class Widget {
     this.name = name;
   }
 
-  public String getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -46,12 +57,12 @@ public class Widget {
     this.type = type;
   }
 
-  public int getOrder() {
-    return order;
+  public int getOrderOfWidget() {
+    return orderOfWidget;
   }
 
-  public void setOrder(int order) {
-    this.order = order;
+  public void setOrderOfWidget(int order) {
+    this.orderOfWidget = order;
   }
 
   public String getText() {
@@ -118,11 +129,11 @@ public class Widget {
     this.value = value;
   }
 
-  public String getTopicID() {
+  public Integer getTopicID() {
     return topicID;
   }
 
-  public void setTopicID(String topicID) {
+  public void setTopicID(Integer topicID) {
     this.topicID = topicID;
   }
 }

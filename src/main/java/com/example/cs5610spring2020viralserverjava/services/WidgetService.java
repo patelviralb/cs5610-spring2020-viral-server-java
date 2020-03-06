@@ -1,58 +1,50 @@
 package com.example.cs5610spring2020viralserverjava.services;
 
 import com.example.cs5610spring2020viralserverjava.models.Widget;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
+import com.example.cs5610spring2020viralserverjava.repositories.WidgetRepository;
 import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WidgetService {
-  private List<Widget> widgetList = new ArrayList<>();
-  private static int order;
 
-  public WidgetService() {
-    /*Widget newWidget = new Widget();
-    newWidget.setId("123456");
-    newWidget.setName("First Widget");
-    newWidget.setOrder(1);
-    this.widgetList.add(newWidget);*/
-    /*this.order = 0;*/
-  }
+  /*private List<Widget> widgetList = new ArrayList<>();*/
+  @Autowired
+  WidgetRepository widgetRepository;
 
-  public Widget createWidget(String topicID, Widget newWidgetToAdd) {
-    newWidgetToAdd.setId(new SimpleDateFormat("YYYY.MM.dd.HH.mm.ss").format(new Date()));
-    int order = findLastOrderForTopicWidget(topicID);
+  public Widget createWidget(Integer topicID, Widget newWidgetToAdd) {
+    /*int order = findLastOrderForTopicWidget(topicID);
     order++;
-    newWidgetToAdd.setOrder(order);
+    newWidgetToAdd.setOrderOfWidget(order);
     this.widgetList.add(newWidgetToAdd);
-    return newWidgetToAdd;
+    return newWidgetToAdd;*/
+    int order = findLastOrderForTopicWidget(topicID);
+    newWidgetToAdd.setOrderOfWidget(++order);
+    newWidgetToAdd.setTopicID(topicID);
+    return widgetRepository.save(newWidgetToAdd);
   }
 
-  private int findLastOrderForTopicWidget(String topicID) {
-    int orderToSend = 0;
-    for (Widget eachWidget : this.widgetList) {
-      if (topicID.equals(eachWidget.getTopicID())) {
-        if (orderToSend < eachWidget.getOrder()) {
-          orderToSend = eachWidget.getOrder();
-        }
-      }
+  private int findLastOrderForTopicWidget(Integer topicID) {
+    if (widgetRepository.findHighestOrderOfWidget(topicID) == null) {
+      return 0;
     }
-    return orderToSend;
+    return widgetRepository.findHighestOrderOfWidget(topicID);
   }
 
-  public List<Widget> findWidgetsForTopic(String topicID) {
-    List<Widget> widgetsForTopic = new ArrayList<>();
+  public List<Widget> findWidgetsForTopic(Integer topicID) {
+    /*List<Widget> widgetsForTopic = new ArrayList<>();
     for (Widget eachWidget : this.widgetList) {
       if (topicID.equals(eachWidget.getTopicID())) {
         widgetsForTopic.add(eachWidget);
       }
     }
-    return widgetsForTopic;
+    return widgetsForTopic;*/
+    return widgetRepository.findWidgetsForTopic(topicID);
   }
 
-  public int updateWidget(String widgetID, Widget updatedWidget) {
-    int totalWidgets = this.widgetList.size();
+  public int updateWidget(Integer widgetID, Widget updatedWidget) {
+    /*int totalWidgets = this.widgetList.size();
     int i;
     for (i = 0 ; i < totalWidgets ; i++) {
       if (this.widgetList.get(i).getId().equals(widgetID)) {
@@ -60,33 +52,39 @@ public class WidgetService {
         return 1;
       }
     }
-    return 0;
+    return 0;*/
+    widgetRepository.save(updatedWidget);
+    return 1;
   }
 
-  public int deleteWidget(String widgetID) {
-    this.widgetList =
+  public int deleteWidget(Integer widgetID) {
+    /*this.widgetList =
         this.widgetList
         .stream()
         .filter(widgetToDelete -> !widgetToDelete.getId().equals(widgetID))
         .collect(Collectors.toList());
+    return 1;*/
+    widgetRepository.deleteById(widgetID);
     return 1;
   }
 
   public List<Widget> findAllWidgets() {
-    return this.widgetList;
+    /*return this.widgetList;*/
+    return (List<Widget>) widgetRepository.findAll();
   }
 
-  public Widget findWidgetById(String widgetID) {
-    for (Widget eachWidget : this.widgetList) {
+  public Widget findWidgetById(Integer widgetID) {
+    /*for (Widget eachWidget : this.widgetList) {
       if (widgetID.equals(eachWidget.getId())) {
         return eachWidget;
       }
     }
-    return null;
+    return null;*/
+    return widgetRepository.findById(widgetID).get();
   }
 
-  public int updateAllWidgets(String topicID, List<Widget> allWidgetsToUpdate) {
-    List<Widget> widgetsForTopic = new ArrayList<>(allWidgetsToUpdate);
+  public int updateAllWidgets(Integer topicID, List<Widget> allWidgetsToUpdate) {
+    /*List<Widget> widgetsForTopic = new ArrayList<>(allWidgetsToUpdate);
     int totalWidgets = this.widgetList.size();
     int i;
     boolean isWidgetUpdated;
@@ -100,10 +98,12 @@ public class WidgetService {
         }
       }
       if(!isWidgetUpdated) {
-        Widget widgetToCreate = this.createWidget(topicID, eachUpdatedWidget);
+        this.createWidget(topicID, eachUpdatedWidget);
       }
     }
 
+    return 1;*/
+    widgetRepository.saveAll(allWidgetsToUpdate);
     return 1;
   }
 }
