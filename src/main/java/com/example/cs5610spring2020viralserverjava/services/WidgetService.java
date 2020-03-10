@@ -14,16 +14,15 @@ public class WidgetService {
   @Autowired
   WidgetRepository widgetRepository;
 
-  /*@Autowired
-  TopicRepository topicRepository;*/
+  @Autowired
+  TopicRepository topicRepository;
 
   public Widget createWidget(Integer topicId, Widget newWidgetToAdd) {
     int order = findLastOrderForTopicWidget(topicId);
     newWidgetToAdd.setOrderOfWidget(++order);
 
-    /*Topic topic = topicRepository.findById(topicId).get();
-    newWidgetToAdd.setTopic(topic);*/
-    /*newWidgetToAdd.setTopicID(topicId);*/
+    Topic topic = topicRepository.findTopicById(topicId);
+    newWidgetToAdd.setTopic(topic);
 
     return widgetRepository.save(newWidgetToAdd);
   }
@@ -36,9 +35,6 @@ public class WidgetService {
   }
 
   public List<Widget> findWidgetsForTopic(Integer topicId) {
-    /*Topic topic = topicRepository.findById(topicId).get();
-    return topic.getListOfWidgets();*/
-    
     return widgetRepository.findWidgetsForTopic(topicId);
   }
 
@@ -53,7 +49,7 @@ public class WidgetService {
   }
 
   public List<Widget> findAllWidgets() {
-    return (List<Widget>) widgetRepository.findAllWidgets();
+    return widgetRepository.findAllWidgets();
   }
 
   public Widget findWidgetById(Integer widgetID) {
@@ -61,7 +57,13 @@ public class WidgetService {
   }
 
   public int updateAllWidgets(Integer topicId, List<Widget> allWidgetsToUpdate) {
-    widgetRepository.saveAll(allWidgetsToUpdate);
+    Topic topic = topicRepository.findTopicById(topicId);
+
+    for(Widget eachWidget : allWidgetsToUpdate) {
+      eachWidget.setTopic(topic);
+      widgetRepository.save(eachWidget);
+    }
+
     return 1;
   }
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 public class WidgetController {
+
   @Autowired
   private WidgetService widgetService;
 
@@ -35,12 +36,14 @@ public class WidgetController {
   }
 
   @PostMapping("/api/topics/{topicID}/widgets")
-  public Widget createWidget(@PathVariable("topicID") Integer topicID, @RequestBody Widget newWidgetToAdd) {
+  public Widget createWidget(@PathVariable("topicID") Integer topicID,
+      @RequestBody Widget newWidgetToAdd) {
     return this.widgetService.createWidget(topicID, newWidgetToAdd);
   }
 
   @PutMapping("/api/widgets/{widgetID}")
-  public int updateWidget(@PathVariable("widgetID") Integer widgetID, @RequestBody Widget updatedWidget) {
+  public int updateWidget(@PathVariable("widgetID") Integer widgetID,
+      @RequestBody Widget updatedWidget) {
     return this.widgetService.updateWidget(widgetID, updatedWidget);
   }
 
@@ -50,7 +53,8 @@ public class WidgetController {
   }
 
   @PostMapping("/api/topics/{topicID}/widgets/allWidgets")
-  public int updateAllWidgets(@PathVariable("topicID") Integer topicID, @RequestBody List<Widget> allWidgetsToUpdate) {
+  public int updateAllWidgets(@PathVariable("topicID") Integer topicID,
+      @RequestBody List<Widget> allWidgetsToUpdate) {
     return this.widgetService.updateAllWidgets(topicID, allWidgetsToUpdate);
   }
 }

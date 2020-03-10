@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -16,12 +17,13 @@ import javax.persistence.Table;
 public class Widget {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
   private String name; //Optional name of the widget
   private String type; //Type of the widget, e.g., Heading, List, Paragraph, Image, YouTube, HTML, Link
   private int orderOfWidget; //Order with respect to widgets in the same list
+  @Lob
   private String text; //Plain text useful for heading text, paragraph text, link text, etc
   private String source; //Absolute or relative URL referring to online resource
   private int size; //Useful to represent size of widget, e.g., heading size
@@ -30,11 +32,10 @@ public class Widget {
   private String cssClass; //CSS class implementing some CSS rule and transformations configured in some CSS rule
   private String style; //CSS transformations applied to the widget
   private String value; //Some arbitrary initial value interpreted by the widget
-  private Integer topicID; //Topic ID for the widget
 
-  /*@ManyToOne
+  @ManyToOne
   @JsonIgnore
-  private Topic topic; //Topic ID for the widget*/
+  private Topic topic; //Topic ID for the widget
 
   public Widget() {
   }
@@ -135,19 +136,11 @@ public class Widget {
     this.value = value;
   }
 
-  public Integer getTopicID() {
-    return topicID;
-  }
-
-  public void setTopicID(Integer topicID) {
-    this.topicID = topicID;
-  }
-
-  /*public Topic getTopic() {
+  public Topic getTopic() {
     return this.topic;
   }
 
   public void setTopic(Topic topic) {
     this.topic = topic;
-  }*/
+  }
 }

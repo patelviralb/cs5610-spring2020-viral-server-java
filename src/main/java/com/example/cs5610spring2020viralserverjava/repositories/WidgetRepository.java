@@ -8,15 +8,15 @@ import org.springframework.data.repository.query.Param;
 
 public interface WidgetRepository extends CrudRepository<Widget, Integer> {
 
-  @Query(value="SELECT MAX(order_of_widget) FROM widgets WHERE topicid=:topicId", nativeQuery = true)
-  Integer findHighestOrderOfWidget(@Param("topicId") Integer topicId);
-
-  @Query(value="SELECT * FROM widgets WHERE topicID=:topicId", nativeQuery = true)
-  List<Widget> findWidgetsForTopic(@Param("topicId") Integer topicId);
-
   @Query(value="SELECT * FROM widgets", nativeQuery = true)
   List<Widget> findAllWidgets();
 
-  @Query(value="SELECT * FROM widgets WHERE topicid=:topicId", nativeQuery = true)
-  Widget findWidgetById(@Param("topicId") Integer topicId);
+  @Query(value="SELECT * FROM widgets WHERE topic_id=:topicId", nativeQuery = true)
+  List<Widget> findWidgetsForTopic(@Param("topicId") Integer topicId);
+
+  @Query(value="SELECT * FROM widgets WHERE id=:widgetId", nativeQuery = true)
+  Widget findWidgetById(@Param("widgetId") Integer widgetId);
+
+  @Query(value="SELECT MAX(order_of_widget) FROM widgets WHERE topic_id=:topicId", nativeQuery = true)
+  Integer findHighestOrderOfWidget(@Param("topicId") Integer topicId);
 }
