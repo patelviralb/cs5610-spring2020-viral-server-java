@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Widget {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(strategy = GenerationType.AUTO)
   private Integer id;
 
   private String name; //Optional name of the widget

@@ -13,4 +13,10 @@ public interface WidgetRepository extends CrudRepository<Widget, Integer> {
 
   @Query(value="SELECT * FROM widgets WHERE topicID=:topicId", nativeQuery = true)
   List<Widget> findWidgetsForTopic(@Param("topicId") Integer topicId);
+
+  @Query(value="SELECT * FROM widgets", nativeQuery = true)
+  List<Widget> findAllWidgets();
+
+  @Query(value="SELECT * FROM widgets WHERE topicid=:topicId", nativeQuery = true)
+  Widget findWidgetById(@Param("topicId") Integer topicId);
 }

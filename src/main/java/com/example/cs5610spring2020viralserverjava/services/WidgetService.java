@@ -23,7 +23,7 @@ public class WidgetService {
 
     /*Topic topic = topicRepository.findById(topicId).get();
     newWidgetToAdd.setTopic(topic);*/
-    newWidgetToAdd.setTopicID(topicId);
+    /*newWidgetToAdd.setTopicID(topicId);*/
 
     return widgetRepository.save(newWidgetToAdd);
   }
@@ -53,11 +53,11 @@ public class WidgetService {
   }
 
   public List<Widget> findAllWidgets() {
-    return (List<Widget>) widgetRepository.findAll();
+    return (List<Widget>) widgetRepository.findAllWidgets();
   }
 
   public Widget findWidgetById(Integer widgetID) {
-    return widgetRepository.findById(widgetID).get();
+    return widgetRepository.findWidgetById(widgetID);
   }
 
   public int updateAllWidgets(Integer topicId, List<Widget> allWidgetsToUpdate) {
