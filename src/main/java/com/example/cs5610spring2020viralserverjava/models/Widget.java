@@ -1,9 +1,11 @@
 package com.example.cs5610spring2020viralserverjava.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -30,11 +32,15 @@ public class Widget {
   private String value; //Some arbitrary initial value interpreted by the widget
   private Integer topicID; //Topic ID for the widget
 
+  /*@ManyToOne
+  @JsonIgnore
+  private Topic topic; //Topic ID for the widget*/
+
   public Widget() {
   }
 
   public String getName() {
-    return name;
+    return this.name;
   }
 
   public void setName(String name) {
@@ -42,7 +48,7 @@ public class Widget {
   }
 
   public Integer getId() {
-    return id;
+    return this.id;
   }
 
   public void setId(Integer id) {
@@ -50,7 +56,7 @@ public class Widget {
   }
 
   public String getType() {
-    return type;
+    return this.type;
   }
 
   public void setType(String type) {
@@ -58,7 +64,7 @@ public class Widget {
   }
 
   public int getOrderOfWidget() {
-    return orderOfWidget;
+    return this.orderOfWidget;
   }
 
   public void setOrderOfWidget(int order) {
@@ -66,7 +72,7 @@ public class Widget {
   }
 
   public String getText() {
-    return text;
+    return this.text;
   }
 
   public void setText(String text) {
@@ -74,7 +80,7 @@ public class Widget {
   }
 
   public String getSource() {
-    return source;
+    return this.source;
   }
 
   public void setSource(String source) {
@@ -82,7 +88,7 @@ public class Widget {
   }
 
   public int getSize() {
-    return size;
+    return this.size;
   }
 
   public void setSize(int size) {
@@ -90,7 +96,7 @@ public class Widget {
   }
 
   public int getWidth() {
-    return width;
+    return this.width;
   }
 
   public void setWidth(int width) {
@@ -98,7 +104,7 @@ public class Widget {
   }
 
   public int getHeight() {
-    return height;
+    return this.height;
   }
 
   public void setHeight(int height) {
@@ -106,7 +112,7 @@ public class Widget {
   }
 
   public String getCssClass() {
-    return cssClass;
+    return this.cssClass;
   }
 
   public void setCssClass(String cssClass) {
@@ -114,7 +120,7 @@ public class Widget {
   }
 
   public String getStyle() {
-    return style;
+    return this.style;
   }
 
   public void setStyle(String style) {
@@ -122,7 +128,7 @@ public class Widget {
   }
 
   public String getValue() {
-    return value;
+    return this.value;
   }
 
   public void setValue(String value) {
@@ -136,4 +142,12 @@ public class Widget {
   public void setTopicID(Integer topicID) {
     this.topicID = topicID;
   }
+
+  /*public Topic getTopic() {
+    return this.topic;
+  }
+
+  public void setTopic(Topic topic) {
+    this.topic = topic;
+  }*/
 }

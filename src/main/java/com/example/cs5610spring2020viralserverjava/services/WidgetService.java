@@ -1,6 +1,8 @@
 package com.example.cs5610spring2020viralserverjava.services;
 
+import com.example.cs5610spring2020viralserverjava.models.Topic;
 import com.example.cs5610spring2020viralserverjava.models.Widget;
+import com.example.cs5610spring2020viralserverjava.repositories.TopicRepository;
 import com.example.cs5610spring2020viralserverjava.repositories.WidgetRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +14,32 @@ public class WidgetService {
   @Autowired
   WidgetRepository widgetRepository;
 
-  public Widget createWidget(Integer topicID, Widget newWidgetToAdd) {
-    int order = findLastOrderForTopicWidget(topicID);
+  /*@Autowired
+  TopicRepository topicRepository;*/
+
+  public Widget createWidget(Integer topicId, Widget newWidgetToAdd) {
+    int order = findLastOrderForTopicWidget(topicId);
     newWidgetToAdd.setOrderOfWidget(++order);
-    newWidgetToAdd.setTopicID(topicID);
+
+    /*Topic topic = topicRepository.findById(topicId).get();
+    newWidgetToAdd.setTopic(topic);*/
+    newWidgetToAdd.setTopicID(topicId);
+
     return widgetRepository.save(newWidgetToAdd);
   }
 
-  private int findLastOrderForTopicWidget(Integer topicID) {
-    if (widgetRepository.findHighestOrderOfWidget(topicID) == null) {
+  private int findLastOrderForTopicWidget(Integer topicId) {
+    if (widgetRepository.findHighestOrderOfWidget(topicId) == null) {
       return 0;
     }
-    return widgetRepository.findHighestOrderOfWidget(topicID);
+    return widgetRepository.findHighestOrderOfWidget(topicId);
   }
 
-  public List<Widget> findWidgetsForTopic(Integer topicID) {
-    return widgetRepository.findWidgetsForTopic(topicID);
+  public List<Widget> findWidgetsForTopic(Integer topicId) {
+    /*Topic topic = topicRepository.findById(topicId).get();
+    return topic.getListOfWidgets();*/
+    
+    return widgetRepository.findWidgetsForTopic(topicId);
   }
 
   public int updateWidget(Integer widgetID, Widget updatedWidget) {
@@ -48,7 +60,7 @@ public class WidgetService {
     return widgetRepository.findById(widgetID).get();
   }
 
-  public int updateAllWidgets(Integer topicID, List<Widget> allWidgetsToUpdate) {
+  public int updateAllWidgets(Integer topicId, List<Widget> allWidgetsToUpdate) {
     widgetRepository.saveAll(allWidgetsToUpdate);
     return 1;
   }
